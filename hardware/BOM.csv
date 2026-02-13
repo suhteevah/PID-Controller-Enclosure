@@ -1,7 +1,20 @@
-﻿Item Number,Part Name,Part Number,Quantity,Description,Unit of Measure,Supplier,Cost per Unit,Notes
-1,SSR (Solid State Relay),SSR-25DA,1,Solid State Relay for controlling heater,Piece,Auber,25,Control Voltage: 3-32VDC, Operating Voltage: 24-480VAC, Current Rating: 25A, Zero-cross turn on
-2,Heat Sink for SSR,HS25,1,Heat sink for 25A SSRs,Piece,Auber,15,Dimensions: Top 50x60mm, Base 50x80mm, Height 50mm, M4 screw thread
-3,Temperature Controller,SYL-1512A,1,1/32 DIN PID Temperature Controller, smart, accurate, reliable,Piece,Auber,30,Compact size: 24 mm x 48 mm x 75 mm, Auto-tune function, Supports various sensors, 10 input types, Output for SSR or relay contact, 6-month warranty
-4,Resistor,220Ω-1W,2,Resistor for current limiting,Piece,Generic,0.1,Used in heating control circuit
-5,Heating Element,30mm Gooseneck 10Wrap,1,Heating coil for e-nail,Piece,Divine Tribe / Generic,65,Required for the e-nail temperature regulation
-6,Wire,16AWG,10,Meter of 16AWG wire,Meter,Generic,0.5,For electrical connections
+Item,Part Name,Part Number,Qty (1ch),Qty (2ch),Qty (4ch),Description,Supplier,Est. Cost,Notes
+1,ESP32 DevKit V1,ESP32-DEVKITC-32D,1,1,1,WiFi+BLE microcontroller - system brain,Espressif / Amazon,$5-8,38-pin version recommended
+2,OLED Display 0.96",SSD1306-128x64,1,1,1,I2C 128x64 OLED display module,Amazon / AliExpress,$3-5,White or blue; I2C address 0x3C
+3,Rotary Encoder,KY-040,1,1,1,Rotary encoder with push button for UI,Amazon,$1-2,5-pin module with built-in pullups
+4,MAX31855 Breakout,MAX31855-K,1,2,4,K-type thermocouple amplifier (SPI),Adafruit / Amazon,$7-10 ea,Cold junction compensation built-in
+5,SSR (Solid State Relay),SSR-25DA,1,2,4,"DC-to-AC solid state relay, 3-32VDC input",Fotek / Amazon,$4-6 ea,"25A rating, zero-cross switching"
+6,SSR Heatsink,Aluminum Fin,1,2,4,Aluminum heatsink for SSR thermal management,Amazon,$3-5 ea,Flat-fin style for slim profile; thermal paste included
+7,5-Pin Mini-XLR Female,NC5FD-L-1,1,2,4,Panel-mount 5-pin mini-XLR connector,Neutrik / Amazon,$3-5 ea,Grounded shell; solder-cup contacts
+8,IEC C14 Inlet (Fused),JR-101-1FR,1,1,1,Fused AC power inlet with switch,Amazon,$2-3,10A fuse; integral rocker switch
+9,AC-DC Converter 5V,HLK-PM01,1,1,1,AC to 5V DC converter for ESP32 power,Hi-Link / Amazon,$3-4,3W output; isolated; mounts on PCB
+10,K-Type Thermocouple,K-TC-BEAD,1,2,4,K-type thermocouple (inside heating coil),Generic,$2-3 ea,Integrated in coil assembly via XLR
+11,Heating Coil,Barrel 10-Wrap,1,2,4,"Barrel coil with kevlar sheath, 5-pin XLR",Divine Tribe / Generic,$25-65 ea,Sizes: 10mm/16mm/20mm/25mm/30mm
+12,Passive Buzzer,5V Piezo,1,1,1,5V passive buzzer for alerts,Amazon,$0.50,Driven by ESP32 PWM
+13,16AWG Wire,Silicone 16AWG,3m,5m,8m,High-temp silicone insulated wire,Amazon,$0.50/m,For AC power and SSR wiring
+14,22AWG Wire,Hookup 22AWG,2m,3m,5m,Signal wire for thermocouple and SPI,Amazon,$0.30/m,For low-voltage signal connections
+15,M3 Hardware Kit,M3 Screws+Nuts,1,1,1,M3x8 and M3x12 screws for mounting,Amazon,$3-5,~20 screws + nuts + standoffs
+16,Fuse 10A,5x20mm Glass,2,2,2,Replacement fuses for IEC inlet,Amazon,$0.50 ea,Spare included
+17,3D Printed Enclosure,PLA/PETG,1,1,1,Printed from provided .scad/.stl files,Self / Service,$5-15,PETG recommended for heat resistance
+,,,,,,,,,
+,TOTAL (approx),,,,,"Model S: ~$65-105 | Model D: ~$100-170 | Model Q: ~$170-300",,,"Prices exclude heating coils; coils sold separately or bundled"
