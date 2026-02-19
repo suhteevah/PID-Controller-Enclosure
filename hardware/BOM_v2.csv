@@ -1,0 +1,43 @@
+Item,Part Name,Part Number,Qty (1ch),Qty (2ch),Qty (4ch),Description,Supplier,Est. Cost,Notes
+,,,,,,CORE COMPONENTS,,,,
+1,ESP32 DevKit V1,ESP32-DEVKITC-32D,1,1,1,WiFi+BLE microcontroller (38-pin) - system brain,Espressif / Amazon,$5-8,38-pin version required; CH340 or CP2102 USB-UART
+2,OLED Display 0.96 inch,SSD1306-128x64,1,1,1,I2C 128x64 OLED display module,Amazon / AliExpress,$3-5,White or blue; I2C address 0x3C; 4-pin header
+3,Rotary Encoder,KY-040,1,1,1,Rotary encoder with push button for UI navigation,Amazon,$1-2,5-pin module with built-in 10k pullups
+4,MAX31855 Breakout,MAX31855-K,1,2,4,K-type thermocouple amplifier breakout (SPI),Adafruit / Amazon,$7-10 ea,Cold junction compensation; DO/CS/CLK interface
+5,SSR (Solid State Relay),SSR-25DA,1,2,4,"DC-to-AC solid state relay, 3-32VDC input, 24-380VAC output",Fotek / Amazon,$4-6 ea,25A rating; zero-cross switching; beware counterfeits
+6,SSR Heatsink,Aluminum Fin Type,1,2,4,Aluminum heatsink for SSR thermal management,Amazon,$3-5 ea,Flat-fin style for slim profile; thermal paste included
+7,5-Pin Mini-XLR Female,NC5FD-L-1,1,2,4,Neutrik panel-mount 5-pin mini-XLR connector,Neutrik / Mouser,$3-5 ea,Grounded shell; solder-cup contacts; industry standard
+8,IEC C14 Inlet (Fused + Switched),JR-101-1FR,1,1,1,Fused AC power inlet with integrated rocker switch,Amazon / Mouser,$2-3,10A fuse; integral rocker switch; snap-in mount
+9,AC-DC Converter 5V,HLK-PM01,1,1,1,"Hi-Link AC to 5V DC converter, 3W isolated",Hi-Link / Amazon,$3-4,AC 100-240V input; 5V 600mA output; fully isolated
+10,Passive Buzzer,5V Piezo Module,1,1,1,5V passive buzzer for temperature alerts and warnings,Amazon,$0.50-1,Driven by ESP32 PWM on GPIO13
+11,16AWG Silicone Wire,Silicone 16AWG,3 m,5 m,8 m,"High-temp silicone insulated wire, red+black",Amazon,$0.50/m,For AC mains power and SSR load wiring; 600V rated
+12,22AWG Hookup Wire,Hookup 22AWG,2 m,3 m,5 m,"Signal wire, assorted colors",Amazon,$0.30/m,For low-voltage signal connections; SPI/I2C/encoder
+13,M3 Hardware Kit,M3 Assorted,1,1,1,"M3x8, M3x12 screws, nuts, standoffs",Amazon,$3-5,~20 screws + 20 nuts + 8 standoffs; stainless steel
+14,Fuse 10A,5x20mm Glass,2,2,2,Replacement fuses for IEC inlet,Amazon,$0.50 ea,250V rated; fast-blow; 1 installed + 1 spare
+,,,,,,,,,,
+,,,,,,NEW v2 COMPONENTS,,,,
+15,NPN Transistor,2N2222A,1,2,4,NPN transistor for SSR buffer driver circuit,Mouser / Amazon,$0.10 ea,TO-92 package; drives SSR with full 5V for reliable switching
+16,Base Resistor 1k ohm,1k 1/4W CF,1,2,4,1k ohm base resistor for NPN SSR driver,Mouser / Amazon,$0.05 ea,1/4W carbon film or metal film; 5% tolerance
+17,ACS712-05B Current Sensor,ACS712-05B Module,0-1,0-2,0-4,5A hall-effect current sensor breakout (optional),Amazon / AliExpress,$2-3 ea,OPTIONAL; analog output to ADC; monitors coil current draw
+18,BME280 Breakout,BME280-I2C,0-1,0-1,0-1,Temp/humidity/pressure sensor for ambient monitoring (optional),Amazon / AliExpress,$3-5,OPTIONAL; I2C address 0x76 or 0x77; shares I2C bus
+19,USB-C Breakout Board,USB-C Female Breakout,1,1,1,USB-C panel-mount breakout for programming access through enclosure,Amazon / AliExpress,$1-2,4-pin breakout (VCC/D+/D-/GND); wired to ESP32 USB port
+20,Heat Shrink Tubing Kit,Assorted 2:1,1,1,1,Heat shrink tubing assortment for insulating connections,Amazon,$2-3,Assorted sizes 1.5mm-10mm; use on all solder joints
+21,Ring Terminals,16AWG Crimp Ring,4,6,10,Ring terminals for grounding bus connections,Amazon,$0.10 ea,M3 hole; crimp + solder for secure PE connections
+,,,,,,,,,,
+,,,,,,EXTERNAL COMPONENTS (not in enclosure),,,,
+22,K-Type Thermocouple,K-TC-BEAD,1,2,4,K-type thermocouple (integrated in heating coil),Generic,$2-3 ea,Comes with coil assembly; connects via XLR pins 1+2
+23,Heating Coil,Barrel 10-Wrap,1,2,4,"Barrel coil with kevlar sheath, 5-pin XLR plug",Divine Tribe / Generic,$25-65 ea,"Sizes: 10/16/20/25/30mm; sold separately"
+,,,,,,,,,,
+,,,,,,ENCLOSURE (choose one),,,,
+24,3D Printed Enclosure (v2),PETG Print,1,1,1,Printed from esp_nail_v2_enclosure.scad,Self / Print Service,$5-15,PETG recommended; see print guide for settings
+25,Wood Box Enclosure (v2),Hardwood CNC,1,1,1,CNC-milled hardwood premium enclosure,Self / Woodshop,$45-75,Walnut/cherry/maple; see wood_box_v2_design.md
+26,Aluminum Enclosure (v2),6061 CNC,1,1,1,CNC-milled aluminum enclosure with anodized finish,CNC Service,$80-150,See aluminum_enclosure_design.md; acts as heatsink
+,,,,,,,,,,
+,,,,,,TOTALS (approx - excluding coils and enclosure),,,,
+,Model S (1ch) Total,,,,,,"Electronics only: ~$45-65",,,"Includes all v2 additions; excludes optional sensors"
+,Model D (2ch) Total,,,,,,"Electronics only: ~$75-115",,,"Includes all v2 additions; excludes optional sensors"
+,Model Q (4ch) Total,,,,,,"Electronics only: ~$130-195",,,"Includes all v2 additions; excludes optional sensors"
+,,,,,,,,,,
+,Model S with optionals,,,,,,"Add ~$5-8 for ACS712 + BME280",,,"Per-channel current sense + ambient monitoring"
+,Model D with optionals,,,,,,"Add ~$7-11 for ACS712 + BME280",,,"Per-channel current sense + ambient monitoring"
+,Model Q with optionals,,,,,,"Add ~$11-17 for ACS712 + BME280",,,"Per-channel current sense + ambient monitoring"

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ESP-Nail Controller</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header id="header">
+            <div class="header-left">
+                <h1>ESP-Nail</h1>
+                <span id="model-badge" class="badge">--</span>
+            </div>
+            <div class="header-right">
+                <span id="wifi-icon" class="icon" title="WiFi">&#x1F4F6;</span>
+                <span id="uptime" class="meta">0:00</span>
+            </div>
+        </header>
+
+        <!-- Channel Cards -->
+        <main id="channels"></main>
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+            <button class="nav-btn" data-page="profiles">Profiles</button>
+            <button class="nav-btn" data-page="settings">Settings</button>
+            <button class="nav-btn" data-page="logs">Logs</button>
+        </nav>
+
+        <!-- Pages -->
+        <section id="page-profiles" class="page hidden">
+            <h2>Temperature Profiles</h2>
+            <div id="profile-list"></div>
+            <button id="btn-add-profile" class="btn btn-primary">+ New Profile</button>
+        </section>
+
+        <section id="page-settings" class="page hidden">
+            <h2>Settings</h2>
+            <div class="settings-group">
+                <h3>Network</h3>
+                <div class="setting-row">
+                    <label>WiFi SSID</label>
+                    <input id="wifi-ssid" type="text" placeholder="Network name">
+                </div>
+                <div class="setting-row">
+                    <label>WiFi Password</label>
+                    <input id="wifi-pass" type="password" placeholder="Password">
+                </div>
+                <button id="btn-save-wifi" class="btn btn-primary">Save WiFi</button>
+            </div>
+            <div class="settings-group">
+                <h3>MQTT</h3>
+                <div class="setting-row">
+                    <label>Broker Host</label>
+                    <input id="mqtt-host" type="text" placeholder="192.168.1.x">
+                </div>
+                <div class="setting-row">
+                    <label>Port</label>
+                    <input id="mqtt-port" type="number" value="1883">
+                </div>
+                <button id="btn-save-mqtt" class="btn btn-primary">Save MQTT</button>
+            </div>
+            <div class="settings-group">
+                <h3>Safety</h3>
+                <div class="setting-row">
+                    <label>Idle Timeout (min)</label>
+                    <input id="idle-timeout" type="number" min="5" max="120" value="60">
+                </div>
+                <button id="btn-save-safety" class="btn btn-primary">Save</button>
+            </div>
+            <div class="settings-group">
+                <h3>Firmware</h3>
+                <div id="fw-version">v--</div>
+                <input id="fw-file" type="file" accept=".bin" class="hidden">
+                <button id="btn-ota" class="btn btn-warn">Upload Firmware</button>
+                <div id="ota-progress" class="progress-bar hidden">
+                    <div id="ota-bar" class="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-logs" class="page hidden">
+            <h2>Session Logs</h2>
+            <div id="log-list"></div>
+        </section>
+
+        <!-- Modal -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="modal-title">--</h3>
+                <div id="modal-body"></div>
+                <div class="modal-actions">
+                    <button id="modal-cancel" class="btn">Cancel</button>
+                    <button id="modal-ok" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
